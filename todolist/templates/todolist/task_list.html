@@ -1,0 +1,7 @@
+<h1>Tasks</h1>
+<ul>
+{% for task in tasks %}
+  <li>{{ task.title }} - {{ task.description }} - {{ task.created_at }} <a href="{% url 'task_update' task.pk %}">Edit</a> <a href="{% url 'task_delete' task.pk %}">Delete</a></li>
+{% endfor %}
+</ul>
+<a href="{% url 'task_create' %}">Create Task</a>
